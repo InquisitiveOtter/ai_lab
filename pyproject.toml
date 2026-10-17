@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gamelab"
+version = "0.1.0"
+description = "Game-agnostic AlphaZero-style tooling: MCTS, policy/value networks, self-play, training, evaluation"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    # Install a CUDA build of PyTorch yourself (see README); deliberately unpinned.
+    "torch",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["gamelab*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-m 'not slow'"
+markers = ["slow: end-to-end learning tests (run with -m slow)"]

@@ -1,0 +1,19 @@
+# Environment
+.venv/
+
+# Reference material (not ours to commit)
+_reference/
+
+# Training outputs, wherever they're written
+checkpoints/
+runs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
